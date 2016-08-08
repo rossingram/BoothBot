@@ -37,7 +37,7 @@ app.post('/webhook/', function (req, res) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
         if (event.message && event.message.text) {
-            let text = event.message.text.quotes
+            let text = event.message.text
             sendTextMessage(sender, "Booth Says: Scrappy Doo" + text.substring(0, 200))
         }
     }
