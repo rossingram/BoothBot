@@ -36,11 +36,11 @@ app.post('/webhook/', function (req, res) {
     for (let i = 0; i < messaging_events.length; i++) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
-        let quotes = ["Booth Says: Scrappy Doo"]
+        let quotes = "Booth Says: Scrappy Doo"
 
         if (event.message && event.message.text) {
             let text = event.message.text.quotes
-            sendTextMessage(sender, quotes + text.substring(0, 200))
+            sendTextMessage(sender, quotes.substring(0, 200) + text.substring(0, 200))
         }
     }
     res.sendStatus(200)
