@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res) {
 
         if (event.message && event.message.text) {
             let text = event.message.text.quotes
-            sendTextMessage(sender, quotes.substring(0, 200) + text.substring(0, 200))
+            sendTextMessage(sender, "Booth Says: Scrappy Doo" + text.substring(0, 200))
         }
     }
     res.sendStatus(200)
